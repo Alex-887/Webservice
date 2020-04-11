@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservice_Berthouzoz_Favre", "Webservice_Berthouzoz_Favre\Webservice_Berthouzoz_Favre.csproj", "{4160F346-5B05-460F-AEFD-0293295DF490}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{A47C610A-7981-464C-ADB4-9B7F747CA642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{54D6BC54-F7DD-44E8-A2F6-FE7E55E28516}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTO", "DTO", "{D9CB28F8-0D3F-47B2-9A9D-A7877793056C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
