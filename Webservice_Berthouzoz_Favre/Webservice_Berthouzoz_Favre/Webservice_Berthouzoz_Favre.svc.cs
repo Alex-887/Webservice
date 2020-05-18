@@ -11,8 +11,12 @@ namespace Webservice_Berthouzoz_Favre
     // NOTE: In order to launch WCF Test Client for testing this service, please select Webservice_Berthouzoz_Favre.svc or Webservice_Berthouzoz_Favre.svc.cs at the Solution Explorer and start debugging.
     public class Webservice_Berthouzoz_Favre : IWebservice_Berthouzoz_Favre
     {
-        public void DoWork()
+        public double ChargeCard(double amount, double balance)
         {
+            balance += amount;
+
+            return balance;
         }
+
     }
 }

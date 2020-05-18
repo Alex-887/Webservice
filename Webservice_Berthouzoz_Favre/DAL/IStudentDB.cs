@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace DAL
 {
-    public class Class1
+    public interface IStudentDB
     {
+        Student GetPersonById(int id);
     }
 }

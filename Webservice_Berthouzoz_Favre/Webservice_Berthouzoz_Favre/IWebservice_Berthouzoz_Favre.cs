@@ -12,6 +12,6 @@ namespace Webservice_Berthouzoz_Favre
     public interface IWebservice_Berthouzoz_Favre
     {
         [OperationContract]
-        double ChargeCard();
+        double ChargeCard(double amount, double balance);
     }
 }
