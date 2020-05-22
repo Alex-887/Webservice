@@ -9,6 +9,9 @@ namespace DAL
 {
     public interface IStudentDB
     {
-        Student GetPersonById(int id);
+        Student GetStudentById(int id);
+        Student GetStudentByUsername(string Username);
+        int AddStudent(Student student);
+        void ChargeAccount(int id, decimal balance);
     }
 }

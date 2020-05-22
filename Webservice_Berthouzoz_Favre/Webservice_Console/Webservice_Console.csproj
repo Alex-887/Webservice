@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +45,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WebserviceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\WebserviceRef\Webservice_Berthouzoz_Favre.wsdl" />
+    <None Include="Connected Services\WebserviceRef\Webservice_Berthouzoz_Favre.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebserviceRef\Webservice_Berthouzoz_Favre1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebserviceRef\Webservice_Berthouzoz_Favre2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebserviceRef\Webservice_Console.WebserviceRef.Student.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WebserviceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebserviceRef\Webservice_Berthouzoz_Favre.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebserviceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebserviceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebserviceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

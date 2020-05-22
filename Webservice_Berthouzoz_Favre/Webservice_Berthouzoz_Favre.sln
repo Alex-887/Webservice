@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservice_Berthouzoz_Favre", "Webservice_Berthouzoz_Favre\Webservice_Berthouzoz_Favre.csproj", "{4160F346-5B05-460F-AEFD-0293295DF490}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservice_Console", "Webservice_Console\Webservice_Console.csproj", "{8DDA2F47-FAA3-4951-8DCA-42EB88A32124}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4160F346-5B05-460F-AEFD-0293295DF490} = {4160F346-5B05-460F-AEFD-0293295DF490}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{4EA9EAA5-F970-4526-964F-FA5776292066}"
 EndProject

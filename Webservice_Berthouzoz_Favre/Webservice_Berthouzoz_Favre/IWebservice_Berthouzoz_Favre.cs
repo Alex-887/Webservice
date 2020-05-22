@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -11,7 +12,18 @@ namespace Webservice_Berthouzoz_Favre
     [ServiceContract]
     public interface IWebservice_Berthouzoz_Favre
     {
+
         [OperationContract]
-        double ChargeCard(double amount, double balance);
+        Student GetStudentById(int id);
+        [OperationContract]
+        Student GetStudentByUsername(string Username);
+        [OperationContract]
+        int AddStudent(string Username, decimal Balance);
+        [OperationContract]
+        void ChargeAccount(int id, decimal balance);
+        [OperationContract]
+        int GetQuotaById(int id);
+        [OperationContract]
+        int GetQuotaByUsername(string Username);
     }
 }
