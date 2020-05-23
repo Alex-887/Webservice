@@ -13,8 +13,10 @@ namespace BLL
         Student GetStudentByUsername(string Username);
         int AddStudent(string Username, decimal Balance);
         void ChargeAccount(int id, decimal balance);
-        int getQuotaById(int id);
-        int getQuotaByUsername(string Username);
+        int GetQuotaById(int id);
+        int GetQuotaByUsername(string Username);
+
+        int Print(int id, int NbPages);
     }
    
 }

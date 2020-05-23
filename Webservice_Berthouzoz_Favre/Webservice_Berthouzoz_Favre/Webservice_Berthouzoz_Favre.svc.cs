@@ -33,7 +33,7 @@ namespace Webservice_Berthouzoz_Favre
         {
             IStudentDB studentDb = new StudentDB();
             IStudentManager studentManager = new StudentManager(studentDb);
-            int Quota = studentManager.getQuotaById(id);
+            int Quota = studentManager.GetQuotaById(id);
             return Quota;
         }
 
@@ -41,7 +41,7 @@ namespace Webservice_Berthouzoz_Favre
         {
             IStudentDB studentDb = new StudentDB();
             IStudentManager studentManager = new StudentManager(studentDb);
-            int Quota = studentManager.getQuotaByUsername(Username);
+            int Quota = studentManager.GetQuotaByUsername(Username);
             return Quota;
         }
 
@@ -59,6 +59,20 @@ namespace Webservice_Berthouzoz_Favre
             IStudentManager studentManager = new StudentManager(studentDb);
             var student = studentManager.GetStudentByUsername(Username);
             return student;
+        }
+
+        public int Print(int id,int NbPages)
+        {
+            
+            IStudentDB studentDb = new StudentDB();
+            IStudentManager studentManager = new StudentManager(studentDb);
+            var Quota = studentManager.GetQuotaById(id);
+            if(Quota >= NbPages && Quota >0)
+            {
+               int NewBalance = studentManager.Print(id,NbPages);
+                return NewBalance;
+            }
+            return -1;
         }
     }
 }

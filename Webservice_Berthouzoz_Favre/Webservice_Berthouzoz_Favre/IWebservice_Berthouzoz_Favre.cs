@@ -25,5 +25,8 @@ namespace Webservice_Berthouzoz_Favre
         int GetQuotaById(int id);
         [OperationContract]
         int GetQuotaByUsername(string Username);
+
+        [OperationContract]
+        int Print(int id, int NbPages);
     }
 }

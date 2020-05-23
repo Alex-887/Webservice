@@ -43,6 +43,12 @@
   <wsdl:message name="IWebservice_Berthouzoz_Favre_GetQuotaByUsername_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetQuotaByUsernameResponse" />
   </wsdl:message>
+  <wsdl:message name="IWebservice_Berthouzoz_Favre_Print_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print" />
+  </wsdl:message>
+  <wsdl:message name="IWebservice_Berthouzoz_Favre_Print_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebservice_Berthouzoz_Favre">
     <wsdl:operation name="GetStudentById">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetStudentById" message="tns:IWebservice_Berthouzoz_Favre_GetStudentById_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="GetQuotaByUsername">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByUsername" message="tns:IWebservice_Berthouzoz_Favre_GetQuotaByUsername_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByUsernameResponse" message="tns:IWebservice_Berthouzoz_Favre_GetQuotaByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/Print" message="tns:IWebservice_Berthouzoz_Favre_Print_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/PrintResponse" message="tns:IWebservice_Berthouzoz_Favre_Print_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWebservice_Berthouzoz_Favre" type="tns:IWebservice_Berthouzoz_Favre">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetQuotaByUsername">
       <soap:operation soapAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <soap:operation soapAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/Print" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -23,7 +23,7 @@ namespace Webservice_Console.WebserviceRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float BalanceField;
+        private decimal BalanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -42,7 +42,7 @@ namespace Webservice_Console.WebserviceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Balance {
+        public decimal Balance {
             get {
                 return this.BalanceField;
             }
@@ -107,16 +107,16 @@ namespace Webservice_Console.WebserviceRef {
         System.Threading.Tasks.Task<Webservice_Console.WebserviceRef.Student> GetStudentByUsernameAsync(string Username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/AddStudent", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/AddStudentResponse")]
-        int AddStudent(string Username, float Balance);
+        int AddStudent(string Username, decimal Balance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/AddStudent", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/AddStudentResponse")]
-        System.Threading.Tasks.Task<int> AddStudentAsync(string Username, float Balance);
+        System.Threading.Tasks.Task<int> AddStudentAsync(string Username, decimal Balance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/ChargeAccount", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/ChargeAccountResponse")]
-        void ChargeAccount(int id, float balance);
+        void ChargeAccount(int id, decimal balance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/ChargeAccount", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/ChargeAccountResponse")]
-        System.Threading.Tasks.Task ChargeAccountAsync(int id, float balance);
+        System.Threading.Tasks.Task ChargeAccountAsync(int id, decimal balance);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaById", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByIdResponse")]
         int GetQuotaById(int id);
@@ -129,6 +129,12 @@ namespace Webservice_Console.WebserviceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByUsername", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/GetQuotaByUsernameResponse")]
         System.Threading.Tasks.Task<int> GetQuotaByUsernameAsync(string Username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/Print", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/PrintResponse")]
+        int Print(int id, int NbPages);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebservice_Berthouzoz_Favre/Print", ReplyAction="http://tempuri.org/IWebservice_Berthouzoz_Favre/PrintResponse")]
+        System.Threading.Tasks.Task<int> PrintAsync(int id, int NbPages);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -174,19 +180,19 @@ namespace Webservice_Console.WebserviceRef {
             return base.Channel.GetStudentByUsernameAsync(Username);
         }
         
-        public int AddStudent(string Username, float Balance) {
+        public int AddStudent(string Username, decimal Balance) {
             return base.Channel.AddStudent(Username, Balance);
         }
         
-        public System.Threading.Tasks.Task<int> AddStudentAsync(string Username, float Balance) {
+        public System.Threading.Tasks.Task<int> AddStudentAsync(string Username, decimal Balance) {
             return base.Channel.AddStudentAsync(Username, Balance);
         }
         
-        public void ChargeAccount(int id, float balance) {
+        public void ChargeAccount(int id, decimal balance) {
             base.Channel.ChargeAccount(id, balance);
         }
         
-        public System.Threading.Tasks.Task ChargeAccountAsync(int id, float balance) {
+        public System.Threading.Tasks.Task ChargeAccountAsync(int id, decimal balance) {
             return base.Channel.ChargeAccountAsync(id, balance);
         }
         
@@ -204,6 +210,14 @@ namespace Webservice_Console.WebserviceRef {
         
         public System.Threading.Tasks.Task<int> GetQuotaByUsernameAsync(string Username) {
             return base.Channel.GetQuotaByUsernameAsync(Username);
+        }
+        
+        public int Print(int id, int NbPages) {
+            return base.Channel.Print(id, NbPages);
+        }
+        
+        public System.Threading.Tasks.Task<int> PrintAsync(int id, int NbPages) {
+            return base.Channel.PrintAsync(id, NbPages);
         }
     }
 }

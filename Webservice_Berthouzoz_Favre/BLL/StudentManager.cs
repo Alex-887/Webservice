@@ -37,7 +37,7 @@ namespace BLL
             StudentDb.ChargeAccount(id,balance);
         }
 
-        public int getQuotaById(int id)
+        public int GetQuotaById(int id)
         {
             var student = StudentDb.GetStudentById(id);
             double calcul = (double) student.Balance / 0.08;
@@ -45,7 +45,7 @@ namespace BLL
             return Quota;
         }
 
-        public int getQuotaByUsername(string Username)
+        public int GetQuotaByUsername(string Username)
         {
             var student = StudentDb.GetStudentByUsername(Username);
             double calcul = (double) student.Balance / 0.08;
@@ -56,6 +56,15 @@ namespace BLL
         public Student GetStudentByUsername(string Username)
         {
             return StudentDb.GetStudentByUsername(Username);
+        }
+
+        public int Print(int id, int NbPages)
+        {
+           int balance=0;
+           var student = StudentDb.GetStudentById(id);
+           balance = ((int)student.Balance-NbPages);
+           StudentDb.ChargeAccount(id, balance);
+            return balance;
         }
     }
 }
